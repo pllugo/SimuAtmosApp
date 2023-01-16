@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  {% load static %}
+
+  <link rel="stylesheet" type="text/css" href="{% static 'impactos_atmosfericos/css/estilo-pocp.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+
+<body>
+  <header>
+    <div class="topnav">
+      <a class="active" href="#home">Home</a>
+      <a href="#new">New</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+    </div>
+  </header>
+  <div class="container">
+    <header>Phothochemical Ozone Creation Potential (POCP)</header>
+    <form action="{% url 'crearPocp' %}" method="POST">
+      {% csrf_token %}
+      <div class="form-first">
+        <div class="details-compound">
+          <span class="title">Details Compound</span>
+          <div class="fields">
+            <div class="input-field">
+              <label for="">Compound</label>
+              <input type="text" name="compuesto" id="">
+            </div>
+
+            <div class="input-field">
+              <label for="">Formula</label>
+              <input type="text" name="formula" id="">
+            </div>
+
+            <div class="input-field">
+              <label for="">Molar Mass (g/mL)</label>
+              <input type="text" name="pesoMolecular" id="">
+            </div>
+
+            <div class="input-field">
+              <label for="">Number of oxidizable bonds</label>
+              <input type="text" name="numeroEnlaces" id="">
+            </div>
+
+            <div class="input-field">
+              <label for="">Carbon number of the VOC</label>
+              <input type="number" name="numeroCarbonos">
+          </div>
+
+            <div class="input-field">
+              <label for="">Rate constant with OH radical</label>
+              <input type="text" name="constantekOh" id="">
+            </div>
+
+            <div class="input-field">
+              <label for="">Rate constant with O3 molecules</label>
+              <input type="text" name="constantekO3" id="">
+            </div>
+
+          </div>
+
+        </div>
+        <div class="details-compound">
+          <span class="title">Product dates</span>
+          <div class="fields">
+            <div class="input-field">
+              <label for="">Molar yield for the unreactive product</label>
+              <input type="text" name="rendimientoProductoNoReactivo">
+            </div>
+
+            <div class="input-field">
+              <label for="">OH rate coefficient for the unreactive product</label>
+              <input type="text" name="constantekOhProductoNoReactivo">
+            </div>
+
+            <div class="input-field">
+              <label for="">Number of reactive bonds of the products</label>
+              <input type="number" name="numeroEnlacesProducto">
+            </div>
+
+
+          </div>
+
+        </div>
+        <div class="details-compound">
+          <span class="title">Data for the calculation of the parameter F</span>
+          <select type="text" class="form-select" aria-label="Default select example" name="claseCov" id="">
+
+            <option value="aliphatics">aliphatics</option>
+            <option value="aromatics with 0 alkyl substituents">aromatics with 0 alkyl substituents</option>
+            <option value="aromatics with 1 alkyl substituents">aromatics with 1 alkyl substituents</option>
+            <option value="aromatics with 2 alkyl substituents">aromatics with 2 alkyl substituents</option>
+            <option value="aromatics with 3 alkyl substituents">aromatics with 3 alkyl substituents</option>
+          </select>
+        </div>
+
+        <div class="details-compound">
+          <span class="title">Data for the calculation of the parameter P</span>
+          <select class="form-select" aria-label="Default select example" name="claseCovP">
+
+            <option value="aldehydes/ketones">aldehydes/ketones</option>
+            <option value="alpha-dicarbonyls">alpha-dicarbonyls</option>
+            <option value="cycloketones">cycloketones</option>
+            <option value="N/A">N/A</option>
+          </select>
+        </div>
+
+        <div class="details-compound">
+          <span class="title">Data for the calculation of the parameter RO3</span>
+          <select type="text" class="form-select" aria-label="Default select example" name="covsConOzono">
+
+            <option value="alkenes/unsaturated oxygenates">alkenes/unsaturated oxygenates</option>
+            <option value="N/A">N/A</option>
+          </select>
+          <div class="input-field">
+            <label for="">Molar yield for VOC with OH radical</label>
+            <input type="text" name="rendimientoCompuestoConOh">
+          </div>
+        </div>
+
+        <div class="details-compound">
+          <span class="title">Data for the calculation of the parameter Q</span>
+          <select type="text" class="form-select" aria-label="Default select example" name="covsAromatico">
+
+            <option value="benzaldehydes/styrenes">benzaldehydes/styrenes</option>
+            <option value="hydroxyarenes">hydroxyarenes</option>
+            <option value="N/A">N/A</option>
+          </select>
+        </div>
+        <div class="details-compound">
+          <span class="title">Region</span>
+          <select class="form-select" aria-label="Default select example" name="region">
+
+            <option value="europa">Europe</option>
+            <option value="usa">USA</option>
+          </select>
+        </div>
+
+      </div>
+      <br>
+
+      <button type="submit" class="btn btn-success">Calculate</button>
+      <a href="{% url 'inicio' %}" class="btn btn-info">Back</a>
+
+    </form>
+  </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+    integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <div id="conten">
+    {% if messages %}
+    {% for m in messages %}
+    {% if m.tags == 'error' %}
+    <script>
+      Swal.fire({
+        title: 'Error',
+        text: '{{m}}',
+        icon: 'error',
+      })
+    </script>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+  </div>
+</body>
+
+</html>

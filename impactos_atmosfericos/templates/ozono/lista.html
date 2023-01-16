@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lista cultivos</title>
+        {% load static %}
+
+        <link rel="stylesheet" type="text/css" href="{% static 'impactos_atmosfericos/css/estilo-pocp.css' %}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       
+    </head>
+    <body>
+        <header>
+            <div class="topnav">
+              <a class="active" href="#home">Home</a>
+              <a href="#new">New</a>
+              <a href="#contact">Contact</a>
+              <a href="#about">About</a>
+            </div>
+          </header>
+
+
+        <br>
+        <h2 style="text-align: center;">Lista de Potenciales POCP ingresados</h2>
+
+
+        <div class="container">
+            <table class="table" style="text-align: center;">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Formula</th>
+                        <th scope="col">Potencial POCP</th>
+                        <th scope="col">Riesgo (Ref CH2=CH2 POCP = 100) <button type="button" class="btn btn-success" data-bs-trigger="hover focus" data-bs-toggle="popover" title="Riesgo de Smog" data-bs-content="Verde: No genera Smog (POCP < 50) <br><br> Naranja: Riesgo Moderado (50 < POCP < 70)<br><br> Rojo: Produce Smog (POCP >= 70)" data-bs-html="true" >?</button></th>
+                        <th scope="col">Acción</th>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+                    {% for listadoPotencial in listadoPotencialesPocp %}
+                    <tr>
+                        <th>{{ listadoPotencial.id }}</th>
+                        <th>{{ listadoPotencial.compuesto }}</th>
+                        <th>{{ listadoPotencial.formula }}</th>
+                        <td>{{ listadoPotencial.potencialPocp }}</td>
+                        <td>
+                            {% if listadoPotencial.potencialPocp <= 50 %} 
+                            <i class="fa fa-circle text-success"></i>
+                            {% endif %}
+                            {% if listadoPotencial.potencialPocp >= 70 %} 
+                            <i class="fa fa-circle" style="color:red;"></i>
+                            {% endif %}
+                            {% if listadoPotencial.potencialPocp >= 50 and listadoPotencial.potencialPocp <= 70 %} 
+                            <i class="fa fa-circle" style="color:orange;"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="{% url 'edicionPocp' listadoPotencial.id %}" class="btn btn-warning">Modify</a>
+                         
+                            <a href="{% url 'eliminarPocp' listadoPotencial.id %}" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <div class="d-grid gap-2 col-3 mx-auto">
+            <a href="{% url 'inicio' %}" class="btn btn-success">Back</a>
+
+        </div>
+       
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <script>
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+            })
+        </script>
+    </body>
+
+</html>

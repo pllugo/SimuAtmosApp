@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block titulo %} Lista de Potenciales AP {% endblock %}
+
+{% block contenido %}  
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <div id="conten">
+    {% if messages == 'exito' %}
+      {% for m in messages %}
+        <script>
+          Swal.fire({
+            title: 'Felicitaciones',
+            text: '{{m}}',
+            icon: 'success',
+          })
+        </script>
+      {% endfor %}
+      {% else %}
+      {% for m in messages %}
+        <script>
+          Swal.fire({
+            title: 'Error',
+            text: '{{m}}',
+            icon: 'error',
+          })
+        </script>
+      {% endfor %}
+    {% endif %}
+  </div>
+
+{% endblock %}

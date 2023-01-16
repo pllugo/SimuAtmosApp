@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block titulo %} Inicio {% endblock %}
+
+{% block contenido %}
+{% load static %}
+<div class="container mt-5">
+    <div class="row">
+
+        <div class="col-lg-3">
+            <div class="card">
+
+                <img src="{% static 'impactos_atmosfericos/img/acid-rain.png' %}" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5>Acidification</h5>
+                    <p class="card-text">AP Calculate</p>
+                    <a href="{% url 'crearAp' %}" class="btn btn-success">Calculate</a>
+                    <br>
+                    <br>
+                    <a href="{% url 'listaap' %}" class="btn btn-info">List</a>
+                    <br>
+                    <br>
+                    <a href="{% url 'displayAp' %}" class="btn btn-secondary">Graphic</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="{% static 'impactos_atmosfericos/img/potentialpocp.png' %}" alt="logo" class="card-img-top">
+                <div class="card-body">
+                    <h5>Tropospheric lifetimes</h5>
+                    <p class="card-text">T[x] Calculate</p>
+                    <a href="{% url 'crearTiempo' %}" class="btn btn-success">Calculate</a>
+                    <br>
+                    <br>
+                    <a href="{% url 'listaTime' %}" class="btn btn-info">List</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="{% static 'impactos_atmosfericos/img/smog.png' %}" alt="logo" class="card-img-top">
+                <div class="card-body">
+                    <h5>Tropospheric Ozone</h5>
+                    <p class="card-text">POCP Calculate</p>
+                    <a href="{% url 'crearPocp' %}" class="btn btn-success">Calculate</a>
+                    <br>
+                    <br>
+                    <a href="{% url 'listaPocp' %}" class="btn btn-info">List</a>
+                    <br>
+                    <br>
+                    <a href="{% url 'displayPocp' %}" class="btn btn-secondary">Graphic</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="{% static 'impactos_atmosfericos/img/calculoodp.png' %}" alt="logo" class="card-img-top">
+                <div class="card-body">
+                    <h5>Stratospheric Ozone</h5>
+                    <p class="card-text">ODP Calculate</p>
+                    <a href="{% url 'crearOdp' %}" class="btn btn-success">Calculate</a>
+                    <br>
+                    <br>
+                    <a href="{% url 'listaOdp' %}" class="btn btn-info">List</a>
+                    <br>
+                    <br>
+                    <a href="{% url 'displayOdp' %}" class="btn btn-secondary">Graphic</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="{% static 'impactos_atmosfericos/img/warming.png' %}" alt="logo" class="card-img-top">
+                <div class="card-body">
+                    <h5>Global Warming</h5>
+                    <p class="card-text">GWP Calculate</p>
+                    <a href="{% url 'crearGwp' %}" class="btn btn-success">Calculate</a>
+                    <br>
+                    <br>
+                    <a href="{% url 'listaGwp' %}" class="btn btn-info">List</a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
