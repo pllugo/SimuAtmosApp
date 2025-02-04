@@ -79,41 +79,46 @@ compuestos: Este programa se crea para determinar las propiedades de compuestos 
 parámetros_acidificacion:Programa creado para crear una base datos de potencial de creación de ozono troposférico de compuestos organicos volátiles (COVs) en el aire.
 parámetros_ozono: Programa creado para crear una base datos de potenciales de acidificación de un COV teniendo como referencia un grupo de compuestos como el SO2, NO2, NOx, NH3, HCl y HF en el aire.
 Datos de entrada de la App 💻
-Se debe dar click al boton que dice Datos COV y colocar los datos del compuesto como aparece en la imagen, luego dar click en el boton Ingresar
-image
+Se debe dar click al boton que dice Calculate y colocar los datos del compuesto como aparece en la imagen, luego dar click en el boton Ingresar
+![image](https://github.com/user-attachments/assets/c0edb6bd-641f-4939-9f65-77d7f55c903b)
+
+
 
 Luego automaticamente la app lleva a la pagina de potencial de acidificacion donde hay que ingresar los datos que alli se piden
-image
+![image](https://github.com/user-attachments/assets/30d621cf-7554-4e4d-8555-80d270328f61)
 
-Al dar click en el boton Calcular arrojara en la parte inferior los resultados de AP
-image
 
-El siguiente paso es calcular los POCP para ello debe dar click en el boton de Potencial POCP, ingresar los datos como en pantalla y presionar Calcular
-image
+Al dar click en el boton Calcular arrojara los resultados de AP estaran en el boton que dice List y al darle click aparecera la siguiente pantalla
+![image](https://github.com/user-attachments/assets/ac36bf0b-ae52-4bbe-a43a-1279f77fff00)
 
-image
 
-image
+El siguiente paso es calcular los POCP para ello debe dar click en el boton Calculate, ingresar los datos como en pantalla y presionar Calcular
+![image](https://github.com/user-attachments/assets/86fe3746-dcbc-4661-ba3d-7b452957e10c)
 
-image
+
+![image](https://github.com/user-attachments/assets/2e6b06d2-c380-48ca-86f0-4c0720ba6ba5)
+
 
 Ahora hay que dar click en el boton de tiempo de residencia, ingresar los datos y presionar Calcular
-image
+![image](https://github.com/user-attachments/assets/110cb939-173a-4a51-9c47-c8da2c15dd59)
 
-image
+
+![image](https://github.com/user-attachments/assets/a91824fe-16c4-40bb-af84-957038c2e786)
+
+![image](https://github.com/user-attachments/assets/e482ee00-ee05-4ed5-877e-f64a2124b3fe)
+
 
 El ultimo parámetro para calcular es el Potencial de Calentamiento Global (GWP) presionamos el boton GWP e ingresamos los datos. Hay que tener en cuenta, que el archivo de datos para el cálculo del GWP debe estar en formato .csv
-image
+![image](https://github.com/user-attachments/assets/0f0e6304-d5ca-483f-9fe0-dedaaddea94b)
+
 
 Al dar click en el boton de Calcular, el programa arroja la siguiente pagina
-image
+![image](https://github.com/user-attachments/assets/fb45e7ed-294a-4cd3-bec0-b87f73d4d182)
 
-Para obtener los resultados en una sola pagina para una mejor experiencia del usuario y una visión amplia del COV a estudiar, se debe dar click al boton de Estadisticas y el programa arroja la siguiente información
-image
 
-image
+El programa arroja la siguiente información cuando se le da click a calculate y luego darle click a List
+![image](https://github.com/user-attachments/assets/0541c436-49b5-4511-a925-51e01c79444c)
 
-image
 
 Notas Importantes 📉
 El archivo a ingresar para calcular el GWP del compuesto a estudiar, debe estar en formato .csv y en la parte superior de las celdas debe contener cm-1 y abs debido a que el programa lee el archivo tipo diccionario.
