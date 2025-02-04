@@ -56,9 +56,9 @@ import pandas as pd
 
 import math
 
-from flask import Flask, request, jsonify, render_template, Response, redirect , url_for, session
-
-from flask_sqlalchemy import SQLAlchemy
+from django.contrib import admin
+from django.views.generic import TemplateView
+from django.urls import path, include
 
 import matplotlib
 
