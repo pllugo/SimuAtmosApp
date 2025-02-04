@@ -5,7 +5,8 @@ Metodologia Experimental
 Potencial de Acidificación
 La oxidación troposférica de compuestos orgánicos volátiles que contienen Cl, F, N o S en sus estructuras químicas también podría contribuir a la acidificación atmosférica, ya que generalmente producen especies ácidas (de Leeuw, 1993), ácidos carboxílicos, que particularmente llegan al suelo en deposición húmeda. procesos con muy alta capacidad de lavado (de Leeuw, 1993), por lo que el AP viene dado por:
 
-image
+![image](https://github.com/user-attachments/assets/5b9e19c8-1dcc-4faa-8e1d-ba03e7f636bd)
+
 
 n: El número de átomos de Cl, F, N y S en una molécula.
 MSO2 Peso molecular SO2
@@ -13,11 +14,14 @@ MCOVs Peso molecular del COV
 Potencial de Creación de Ozono Troposferico
 Una forma de estudiar la posible formación de Ozono troposférico de un COV en el aire, es a traves del estudio del calculo del POCP
 
-image
+![image](https://github.com/user-attachments/assets/cc07f929-7bfe-42ce-a711-5f9cec320273)
 
-image
 
-image
+![image](https://github.com/user-attachments/assets/8d639935-2a95-4b05-b0b9-426872f4cb68)
+
+
+![image](https://github.com/user-attachments/assets/8d1469b6-8c77-4ffb-80ee-b99b89199036)
+
 
 Tiempo de residencia atmosférico
 Uno de los parámetros que dan mucha información acerca de los posibles impactos ambientales de un COV en la atmosfera es el tiempo de residencia atmosferico, el cual relaciona la constante cinética del compuesto con la concentración del oxidante, ya sea, radicales OH*, Cl, NO3 y O3. Asi se conoce si el COV tiene un impacto local, regional o mayor.
@@ -113,7 +117,8 @@ image
 
 Notas Importantes 📉
 El archivo a ingresar para calcular el GWP del compuesto a estudiar, debe estar en formato .csv y en la parte superior de las celdas debe contener cm-1 y abs debido a que el programa lee el archivo tipo diccionario.
-image
+![image](https://github.com/user-attachments/assets/5ac0dac7-d803-4ebf-a92f-3251e51eb022)
+
 
 Los botones como Tablero, Usuario y Perfil no se encuentran habilitados, ésto es porque la app esta diseñada para que otros becarios doctorales puedan mejorar el codigo de la presente app y actualizar las otras funciones que la app puede ofrecer.
 Contribución 🚀
